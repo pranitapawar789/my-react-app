@@ -24,9 +24,8 @@ class Panel extends React.Component{
                             }
                             else {
                                 return<div> <li className="list-panel">{`${item.name}         
-                                            ${item.duration}      
-                                             ${item.author}
-                                             ${item.image}`}
+                                                ${item.duration}      
+                                                ${item.author}`}
                              </li> <AddtoCart/> </div>
                             }
                         })}
