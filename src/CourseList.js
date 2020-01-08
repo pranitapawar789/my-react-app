@@ -5,6 +5,7 @@ import './index.css'
 import Search from './Search'
 
 
+
 const data =   {
     
   
@@ -70,7 +71,8 @@ class CourseList extends  React.Component{
      <h4>Search Courses</h4>
       <Search onSearch={this.searchCourse}/>
       </div>
-     <Panel item={data.course} searchText = {this.state.search} />
+     <Panel item={data.course} searchText = {this.state.search}  />
+   
      
    
      

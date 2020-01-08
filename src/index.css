@@ -14,8 +14,11 @@
 .list-panel{
     height: 30px;
     
+    
     background-color: bisque;
 }
+
+
 
 .search-bar{
    
@@ -24,4 +27,12 @@
     border-width: 3px;
 
 
+}
+
+
+.cart{
+    height: 50px;
+    width:100px;
+    background-color: lightslategray;
+    top:0
 }
