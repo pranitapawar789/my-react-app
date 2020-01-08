@@ -37,7 +37,7 @@ removeCourse = () =>{
   
     this.setState({
         selected:"Removed",
-      qty:(this.state.qty - 1)
+      qty:this.state.qty - 1
     })
     console.log(this.state.qty);
     console.log(this.state.selected);
