@@ -1,13 +1,14 @@
 import React from 'react'
 import AddtoCart from './AddtoCart'
 import './index.css'
+import Sort from  './Sort'
 
 
 
 class Panel extends React.Component{
    
     render(){
-        console.log(this.props.searchText)
+       // console.log(this.props.searchText)
         let bookList = this.props.item;
         let SeachText = this.props.searchText;
         return(
@@ -26,7 +27,8 @@ class Panel extends React.Component{
                                 return<div> <li className="list-panel">{`Course Name:${item.name}         
                                                 Course Duration:${item.duration}      
                                                Author:${item.author}`}
-                             </li> <AddtoCart/> </div>
+                             </li> <AddtoCart/> 
+                             </div>
                             }
                         })}
 

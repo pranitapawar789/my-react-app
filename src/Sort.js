@@ -1,46 +1,65 @@
 // import React from 'react'
-// import CourseList from './CourseList'
-// class Sort extends React.Component{
 
-//     constructor (props) {
-//         super(props)
+
+
+
+// class Sort extends React.Component{
+//     constructor(){
+//         super()
+//             this.state = {
+//                 year:'2018',
+//                 newYear:[],
+//                 oldestFirst:true
+//             }
+
        
-//         this.SortByDate = this.sortByDate.bind(this)
-//         this.state = {
-//           postList: [],
-//           isOldestFirst: true
+//     }
+
+//     sortByDate = () =>{
+//         this.setState({
+//             newYear:this.state.year
+//         })
+//         if(this.state.oldestFirst){
+//             newYear = year.sort((a,b)=>a.this.state.year>b.this.state.newYear)
+//         }else{
+//             newYear = year.sort((a,b)=>a.this.state.year<b.this.state.newYear)
 //         }
+//     }
+//     render () {
+       
+//         return (
+//           <div >
+           
+          
+//             <button onClick={this.SortByDate}>Order by date</button>
+//             {postList.map((item, index) => {
+//               return <CourseList
+//                 post={item}
+//                 key={`post-list-key ${index}`}
+//                />
+//             })}
+//           </div>
+//         )
 //       }
 
-// sortByDate () {
-//     const {postList} = this.state
-//     let newPostList = postList
-//     if (this.state.isOldestFirst) {
-//       newPostList = postList.sort((a, b) => a.date > b.date)
-//     } else {
-//       newPostList = postList.sort((a, b) => a.date < b.date)
-//     }
-//     this.setState({
-//       isOldestFirst: !this.state.isOldestFirst,
-//       postList: newPostList
-//     })
-//   }
-//   render () {
-//     const {postList} = this.state
-//     return (
-//       <div >
-//         <h1>Hello There</h1>
-      
-//         <button onClick={this.SortByDate}>Order by date</button>
-//         {postList.map((item, index) => {
-//           return <CourseList
-//             post={item}
-//             key={`post-list-key ${index}`}
-//            />
-//         })}
-//       </div>
-//     )
-//   }
+   
 // }
 
+
 // export default Sort;
+
+
+// const Sorting = (props)=> {
+//     return(
+//         <div>
+//             <p1>sort-by</p1>
+//             <button onClick>duration</button>
+//             <button>date</button>
+//          <ul>
+//             {props.durations.map((check, i)=>{
+//                   return <li key={i}>{check.duration}</li>
+//                 })}
+//         </ul>
+//         </div>
+//             )
+//     }

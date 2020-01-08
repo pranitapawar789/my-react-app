@@ -1,5 +1,6 @@
 import React from 'react'
 import './index.css'
+import Cart from './Cart'
 
 class Search extends React.Component {
 
@@ -69,10 +70,17 @@ class Search extends React.Component {
             //         }
             //     })}
             // </ul>
+            <>
             <input type="text" ref="searchRef"  className="search-bar"onChange={this.changeHandler}></input>
+            <Cart/>
+            </>
            
         )
     }
 }
 
 export default Search;
+
+
+
+

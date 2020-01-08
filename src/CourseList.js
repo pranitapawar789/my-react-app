@@ -3,6 +3,7 @@ import './index.css'
 
  import Panel from './Panel'
 import Search from './Search'
+import Sort from './Sort'
 
 
 
@@ -72,7 +73,7 @@ class CourseList extends  React.Component{
       <Search onSearch={this.searchCourse}/>
       </div>
      <Panel item={data.course} searchText = {this.state.search}  />
-   
+    
      
    
      
