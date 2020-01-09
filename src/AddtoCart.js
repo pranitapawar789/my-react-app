@@ -9,6 +9,7 @@ class AddtoCart extends React.Component{
             this.state = {
                 selected:'',
                 qty:0,
+             
                 disable:true
               
 
@@ -23,7 +24,7 @@ addCourse = (e) =>{
     this.setState({
         selected:"Added to cart",
         qty: this.state.qty + 1,
-        
+   
      
       
         
@@ -46,6 +47,7 @@ removeCourse = (e) =>{
       qty:this.state.qty - 1
     })
     console.log(this.state.qty);
+    
   
   //  console.log(this.state.selected);
   e.preventDefault();
@@ -59,10 +61,13 @@ removeCourse = (e) =>{
         
         return(
            <>
-            <div>
+            <div className="cart-btns">
             <button onClick={this.addCourse} disabled={!this.state.disable} >Add to Cart </button>
             <button onClick={this.removeCourse}>Remove</button>
+            <div className="cart">
             <h3>Cart Items:{this.state.qty}</h3>
+        
+            </div>
             </div>
           
             </>

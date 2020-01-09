@@ -7,6 +7,8 @@ import Sort from './Sort'
 
 
 
+
+
 const data =   {
     
   
@@ -57,22 +59,34 @@ class CourseList extends  React.Component{
     super()
     this.state = {
       search: ''
+    
     }
     this.searchCourse = this.searchCourse.bind(this)
   }
+  
   searchCourse(text) {
     this.setState({
         search: text
     })
   }
+
+
+
+
  render(){
     return(
-   <div>
+   <div className="container">
+    
      <div className="search-Panel">
      <h4>Search Courses</h4>
+    
       <Search onSearch={this.searchCourse}/>
+     <Sort/>
       </div>
-     <Panel item={data.course} searchText = {this.state.search}  />
+     
+     <Panel item={data.course} searchText = {this.state.search}   />
+    
+     
     
      
    

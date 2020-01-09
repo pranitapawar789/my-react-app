@@ -10,15 +10,21 @@
     
 } 
 
+.cart-btns {
+    display: none;
+}
 
 .list-panel{
-    height: 30px;
+    height: auto;
     
     
-    background-color: bisque;
+    
 }
 
 
+.list:hover .cart-btns{
+    display: block;
+}
 
 .search-bar{
    
@@ -29,10 +35,37 @@
 
 }
 
-
 .cart{
-    height: 50px;
-    width:100px;
-    background-color: lightslategray;
-    top:0
+  
+    height: auto;
+    width: auto;
 }
+
+.container{
+    height: 500;
+    width:400px;
+    justify-content: center;
+   border-radius: 3px solid black;
+   
+}
+#root{
+   
+    align-items: center;
+    height: auto;
+    
+    border: 1px solid black;
+}
+
+li{
+    height: 300px;
+    width:200px ;
+    margin-bottom: 15px;
+
+
+}
+
+li:hover{
+background-color: bisque;    
+
+}
+

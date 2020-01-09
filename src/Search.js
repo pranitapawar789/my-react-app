@@ -1,6 +1,7 @@
 import React from 'react'
 import './index.css'
 import Cart from './Cart'
+import Sort from './Sort'
 
 class Search extends React.Component {
 

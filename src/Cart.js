@@ -1,5 +1,5 @@
 import React from 'react'
-import AddtoCart from './AddtoCart'
+import './index.css'
 
 
 class  Cart extends React.Component{
@@ -7,7 +7,9 @@ class  Cart extends React.Component{
         let quant = this.props.qty;
         return(
             <div>
-    <h4>Quantity:{this.quant}</h4>
+   <div className="cart-panel"> 
+            <h4>Quantity:{this.quant}</h4>
+   </div>
 
                 </div>
         )

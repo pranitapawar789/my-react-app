@@ -6,6 +6,12 @@ import Sort from  './Sort'
 
 
 class Panel extends React.Component{
+
+
+    add = () =>{
+      //return  <AddtoCart />
+    console.log("fhry");
+    }
    
     render(){
        // console.log(this.props.searchText)
@@ -24,10 +30,11 @@ class Panel extends React.Component{
                                 return null
                             }
                             else {
-                                return<div> <li className="list-panel">{`Course Name:${item.name}         
+                                return<div>
+                                    <div className="list"> <li className="list-panel" onMouseOver={this.add}>{`Course Name:${item.name}         
                                                 Course Duration:${item.duration}      
                                                Author:${item.author}`}
-                             </li> <AddtoCart/> 
+                             </li><AddtoCart/></div> 
                              </div>
                             }
                         })}
