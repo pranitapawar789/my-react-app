@@ -9,7 +9,7 @@ import Sort from './Sort'
 
 
 
-const data =   {
+const data=   {
     
   
     course:[{
@@ -58,8 +58,45 @@ class CourseList extends  React.Component{
   constructor() {
     super()
     this.state = {
-      search: ''
-    
+      search: '',
+      coursedetail: [ {
+        name: "React - basics",
+        description: "This course is going to take you through basics of React.",
+        author: "James White",
+        publishDate: "12/03/2019",
+        duration: "00:03:56",
+       
+      },
+      {
+        name: "Vue - learn vue in an hour",
+        description: "This course teaches you how to build a vue application in an hour.",
+        author: "Michael Brown",
+         publishDate: "17/10/2019",
+        duration: "00:00:59",
+       
+
+      },
+      {
+        name: "CSS Animations",
+        description: "Learn how to animate anything in CSS",
+        author: "Alan Smith",
+        publishDate: "04/12/2018",
+        duration: "00:02:11",
+       
+
+      },
+      {
+        name: "JS - Zero to hero",
+        description: "Everything you need to know in JS",
+        author: "Sarah Parker",
+        publishDate: "12/03/2019",
+        duration: "01:01:35",
+      
+
+      }
+     ],
+      search:'',
+  
     }
     this.searchCourse = this.searchCourse.bind(this)
   }
@@ -69,6 +106,31 @@ class CourseList extends  React.Component{
         search: text
     })
   }
+
+
+  
+ 
+    listProducts = () => {
+      console.log("duration",this.state.coursedetail)
+      this.setState(state => {
+        if (state.sort !== '') {
+          state.coursedetail.sort((a, b) =>
+            (state.sort === 'duration'
+              ? ((a.duration > b.duration) ? 1 : -1)
+              : ((a.duration < b.duration) ? 1 : -1)));
+        } else {
+          state.coursedetail.sort((a, b) => (a.id > b.id) ? 1 : -1);
+        }
+      })}
+  
+      
+      handleSortChange = (e) => {
+      this.setState({ sort: e.target.value });
+      this.listProducts();
+    
+    }
+
+
 
 
 
@@ -81,10 +143,13 @@ class CourseList extends  React.Component{
      <h4>Search Courses</h4>
     
       <Search onSearch={this.searchCourse}/>
-     <Sort/>
+     
+      <Sort handleSortChange={this.handleSortChange} ></Sort>
+      
       </div>
      
      <Panel item={data.course} searchText = {this.state.search}   />
+
     
      
     

@@ -8,12 +8,7 @@ import Sort from  './Sort'
 class Panel extends React.Component{
 
 
-    add = () =>{
-      //return  <AddtoCart />
-    console.log("fhry");
-    }
-   
-    render(){
+ render(){
        // console.log(this.props.searchText)
         let bookList = this.props.item;
         let SeachText = this.props.searchText;
@@ -31,10 +26,11 @@ class Panel extends React.Component{
                             }
                             else {
                                 return<div>
-                                    <div className="list"> <li className="list-panel" onMouseOver={this.add}>{`Course Name:${item.name}         
-                                                Course Duration:${item.duration}      
+                                    <div className="list"> <li className="list-panel" >{`Course Name:${item.name}         
+                                                    
                                                Author:${item.author}`}
                              </li><AddtoCart/></div> 
+                             
                              </div>
                             }
                         })}
