@@ -4,6 +4,7 @@ import './index.css'
  import Panel from './Panel'
 import Search from './Search'
 import Sort from './Sort'
+import AddtoCart from './AddtoCart'
 
 
 
@@ -20,7 +21,7 @@ const data=   {
       duration: "00:03:56",
       image: "https://cdn.auth0.com/blog/react-js/react.png"
     },
-    {
+    {           
       "name": "Vue - learn vue in an hour",
       "description": "This course teaches you how to build a vue application in an hour.",
       "author": "Michael Brown",
@@ -82,6 +83,7 @@ class CourseList extends  React.Component{
         author: "Alan Smith",
         publishDate: "04/12/2018",
         duration: "00:02:11",
+
        
 
       },
@@ -96,6 +98,7 @@ class CourseList extends  React.Component{
       }
      ],
       search:'',
+      courseadd:[]
   
     }
     this.searchCourse = this.searchCourse.bind(this)
@@ -128,9 +131,34 @@ class CourseList extends  React.Component{
       this.setState({ sort: e.target.value });
       this.listProducts();
     
+    } 
+
+
+
+
+    addCourse = (e,coursedetail) => {
+      e.preventDefault()
+      console.log('course name',coursedetail);
+      this.setState(state => {
+        const courseadd = this.state.courseadd;
+        let productAlreadyInCart = false;
+  
+        courseadd.forEach(a => {
+          if (a.id === coursedetail.id) {
+            a.count += 1;
+            productAlreadyInCart = true;
+          }
+        });
+  
+        if (!productAlreadyInCart) {
+          courseadd.push({ ...coursedetail, count: 1 });
+          console.log('added cart',courseadd)
+        }
+      
+        return { courseadd: courseadd };
+       
+      });
     }
-
-
 
 
 
@@ -143,12 +171,16 @@ class CourseList extends  React.Component{
      <h4>Search Courses</h4>
     
       <Search onSearch={this.searchCourse}/>
+    
      
       <Sort handleSortChange={this.handleSortChange} ></Sort>
       
+      
+      
       </div>
      
-     <Panel item={data.course} searchText = {this.state.search}   />
+     <Panel item={data.course} searchText = {this.state.search}  />
+     
 
     
      
@@ -163,3 +195,4 @@ class CourseList extends  React.Component{
 }
 
 export default CourseList;   
+
